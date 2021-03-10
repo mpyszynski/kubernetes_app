@@ -9,4 +9,4 @@ spec:
       ports:
       - containerPort: 27017
   nodeSelector:
-    app: gke-cluster-2-default-pool-865d4d8a-208q
+    kubernetes.io/hostname: gke-cluster-2-default-pool-865d4d8a-208q
