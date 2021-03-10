@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
       - name: test-server-1
-        image: k8s-test:98a769a41690
-        imagePullPolicy: Never
+        image: mpyszynski/k8s-gcp
       nodeSelector:
         kubernetes.io/hostname: gke-cluster-2-default-pool-865d4d8a-208q
 ---
