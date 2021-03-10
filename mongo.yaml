@@ -1,15 +1,24 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: mongodb
+  name: test-mongo
+  labels:
+    app: test-mongo
 spec:
-  containers:
-    - name: mongodb
-      image: mongo
-      ports:
-      - containerPort: 27017
-  nodeSelector:
-    kubernetes.io/hostname: gke-cluster-2-default-pool-865d4d8a-208q
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-mongo
+  template:
+    metadata:
+      labels:
+        app: test-mongo
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo
+        ports:
+        - containerPort: 27017
 ---
 apiVersion: v1
 kind: Service
@@ -17,8 +26,9 @@ metadata:
   name: mongo-service
 spec:
   selector:
-    name: mongodb
+    app: test-mongo
   ports:
     - protocol: TCP
       port: 27017
       targetPort: 27017
+
