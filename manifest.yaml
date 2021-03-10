@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-server
+  labels:
+    app: test-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-server
+  template:
+    metadata:
+      labels:
+        app: test-server
+    spec:
+      containers:
+      - name: test-server-1
+        image: k8s-test:latest
+        imagePullPolicy: Never
+      nodeSelector:
+        kubernetes.io/hostname: gke-cluster-2-default-pool-865d4d8a-208q
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-server-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: test-server
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
