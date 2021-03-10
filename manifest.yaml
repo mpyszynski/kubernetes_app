@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: test-server-1
-        image: mpyszynski/k8s-gcp
+        image: mpyszynski/k8s-gcp:latest
       nodeSelector:
         kubernetes.io/hostname: gke-cluster-2-default-pool-865d4d8a-208q
 ---
