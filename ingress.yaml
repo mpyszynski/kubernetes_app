@@ -7,12 +7,16 @@ metadata:
 spec:
   rules:
       - http:
-          paths: /get
+          paths:
           - backend:
               serviceName: "test-server-service"
               servicePort: 8000
+            path: /get
+            pathType: Prefix
       - http:
-          paths: /get2
+          paths:
           - backend:
               serviceName: "test-service2"
               servicePort: 8000
+            path: /get2
+            pathType: Prefix
