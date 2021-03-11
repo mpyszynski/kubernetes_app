@@ -4,13 +4,13 @@ metadata:
   name: test-ingress
 spec:
   rules:
-    - host: http://34.76.75.227:8000/
+    - host: test123.com
       http:
         paths:
         - backend:
             serviceName: "test-server-service"
             servicePort: 8000
-    - host: http://34.78.130.160:8000/
+    - host: test123.com
       http:
         paths:
         - backend:
