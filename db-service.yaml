@@ -17,8 +17,11 @@ spec:
       containers:
       - name: test-server-1
         image: mpyszynski/k8s-gcp:latest
+        env:
+          - name: NUM
+            value: "1"
       nodeSelector:
-        kubernetes.io/hostname: gke-cluster-2-default-pool-865d4d8a-208q
+        kubernetes.io/hostname: gke-cluster-1-default-pool-c18ec09f-kc3h
 ---
 apiVersion: v1
 kind: Service

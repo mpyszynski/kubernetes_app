@@ -19,6 +19,8 @@ spec:
         image: mongo
         ports:
         - containerPort: 27017
+      nodeSelector:
+        kubernetes.io/hostname: gke-cluster-1-default-pool-c18ec09f-kc3h
 ---
 apiVersion: v1
 kind: Service

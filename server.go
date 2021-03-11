@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -12,6 +13,7 @@ import (
 )
 
 func main() {
+	serviceNum := os.Getenv("num")
 	// Mongo
 	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://mongo-service:27017"))
 	if err != nil {
@@ -41,7 +43,7 @@ func main() {
 		if err = cursor.All(context.TODO(), &results); err != nil {
 			log.Fatal(err)
 		}
-		w.Write([]byte(fmt.Sprintf("Inserted docs %v", results)))
+		w.Write([]byte(fmt.Sprintf("Service num %v,Inserted docs %v", serviceNum, results)))
 	})
 
 	mux.HandleFunc("/add", func(w http.ResponseWriter, r *http.Request) {
