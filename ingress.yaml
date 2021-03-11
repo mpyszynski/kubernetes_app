@@ -13,13 +13,6 @@ spec:
               servicePort: 8000
       - http:
           paths:
-          - path: /get
-            pathType: Prefix
-            backend:
-              serviceName: "test-server-service"
-              servicePort: 8000
-      - http:
-          paths:
           - path: /get2
             pathType: Prefix
             backend:
