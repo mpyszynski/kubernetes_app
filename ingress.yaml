@@ -5,13 +5,13 @@ metadata:
   annotations:
 spec:
   rules:
-  - host: "*"
+  - host: "*.com"
     http:
       paths:
       - backend:
           serviceName: test-server-service
           servicePort: 8000
-  - host: "*"
+  - host: "*.com"
     http:
       paths:
       - backend:
