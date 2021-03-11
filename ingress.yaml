@@ -5,25 +5,16 @@ metadata:
   annotations:
 spec:
   rules:
-  - host: "*.com"
-    http:
-      paths:
-      - backend:
-          serviceName: test-server-service
-          servicePort: 8000
-  - host: "*.com"
-    http:
-      paths:
-      - backend:
-          serviceName: test-service2
-          servicePort: 80
-  # rules:
-  #     - host:
-  #     - http:
-  #         paths:
-  #         - backend:
-  #             serviceName: "test-service2"
-  #             servicePort: 8000
+      - host:
+      - http:
+          paths:
+          - backend:
+              serviceName: "test-service2"
+              servicePort: 8000
+          - backend:
+              serviceName: "test-server-service"
+              servicePort: 8000
+
   #     - http:
   #         paths:
   #         - path: /get2
