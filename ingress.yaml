@@ -9,12 +9,12 @@ spec:
       - http:
           paths:
           - backend:
-              serviceName: "test-server-service"
+              serviceName: "test-service2"
               servicePort: 8000
       - http:
           paths:
           - path: /get2
             pathType: Prefix
             backend:
-              serviceName: "test-service2"
+              serviceName: "test-server-service"
               servicePort: 8000
