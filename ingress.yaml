@@ -11,6 +11,11 @@ spec:
           - backend:
               serviceName: "test-server-service"
               servicePort: 8000
+      - http:
+          paths:
+          - backend:
+              serviceName: "test-server-service"
+              servicePort: 8000
             path: /get
             pathType: Prefix
       - http:
