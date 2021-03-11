@@ -46,6 +46,18 @@ func main() {
 		w.Write([]byte(fmt.Sprintf("Service num %v,Inserted docs %v", serviceNum, results)))
 	})
 
+	mux.HandleFunc("/get2", func(w http.ResponseWriter, r *http.Request) {
+		cursor, err := testColl.Find(context.TODO(), bson.M{})
+		if err != nil {
+			log.Fatal(err)
+		}
+		var results []bson.M
+		if err = cursor.All(context.TODO(), &results); err != nil {
+			log.Fatal(err)
+		}
+		w.Write([]byte(fmt.Sprintf("Service num %v,Inserted docs %v", serviceNum, results)))
+	})
+
 	mux.HandleFunc("/add", func(w http.ResponseWriter, r *http.Request) {
 		res, err := testColl.InsertOne(context.TODO(), bson.D{
 			{Key: "name", Value: "Dyzio"},
