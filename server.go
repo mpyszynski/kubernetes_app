@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	serviceNum := os.Getenv("num")
+	serviceNum := os.Getenv("NUM")
 	// Mongo
 	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://mongo-service:27017"))
 	if err != nil {

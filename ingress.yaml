@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test-ingress
+spec:
+  rules:
+    - host: 34.76.75.227
+      http:
+        paths:
+        - backend:
+            serviceName: test-server-service
+            port: 8000
+    - host: 34.78.130.160
+      http:
+        paths:
+        - backend:
+            serviceName: test-service2
+            port: 8000
