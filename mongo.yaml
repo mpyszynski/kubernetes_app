@@ -20,7 +20,7 @@ spec:
         ports:
         - containerPort: 27017
       nodeSelector:
-        kubernetes.io/hostname: gke-cluster-1-default-pool-c18ec09f-kkvt
+        kubernetes.io/hostname: gke-cluster-1-default-pool-5a73e956-0w7j
 ---
 apiVersion: v1
 kind: Service
@@ -33,5 +33,4 @@ spec:
     - protocol: TCP
       port: 27017
       targetPort: 27017
-    resolution: NONE
 
