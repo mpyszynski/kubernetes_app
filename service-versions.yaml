@@ -39,7 +39,7 @@ spec:
           - name: NUM
             value: "1"
       nodeSelector:
-        kubernetes.io/hostname: gke-cluster-1-default-pool-c18ec09f-kc3h
+        kubernetes.io/hostname: gke-cluster-1-default-pool-5a73e956-0w7j
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -67,4 +67,4 @@ spec:
           - name: NUM
             value: "2"
       nodeSelector:
-        kubernetes.io/hostname: gke-cluster-1-default-pool-c18ec09f-kc3h
+        kubernetes.io/hostname: gke-cluster-1-default-pool-5a73e956-qq9l
